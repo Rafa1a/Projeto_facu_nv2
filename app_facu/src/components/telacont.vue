@@ -147,5 +147,7 @@ export default {
 </script>
 
 <style>
-
+    *{
+        margin: 15px;
+    }
 </style>
