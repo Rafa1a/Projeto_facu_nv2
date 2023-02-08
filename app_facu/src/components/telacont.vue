@@ -1,27 +1,29 @@
 <template>
-  <div>
-    <h1>Vamos contar</h1>
-    <h2>Número entre 1 a 100</h2>
-    <label for="valor">Valor</label>
-    <input type="text" name="valor" id="valor" v-model="numnovoitem" @keyup.enter="adicionar" maxlength="20" ref="focu">
-    <button @click="adicionar">add</button>
-</div>
-<div>
-    <select name="select" id="select" v-model="select" >
-    
-        <option v-for="option in options" :value="option.value" v-text="option.text" ></option>
-        
-    
-    </select>
-</div>
-<div>
-    <button @click="ordenar">Ordenar</button>
-    <button @click="misturar">Misturar</button>
-    <button @click="limpar">Limpar</button>
-</div>
-<div id="cardlista">
-    <ul id="lista" v-for="item in lista" :key="item.id" ><li v-text="item.num"></li></ul>
-</div>
+  <div id="telacont" >
+      <div>
+        <h1>Vamos contar</h1>
+        <h2>Número entre 1 a 100</h2>
+        <label for="valor">Valor</label>
+        <input type="text" name="valor" id="valor" v-model="numnovoitem" @keyup.enter="adicionar" maxlength="20" ref="focu">
+        <button @click="adicionar">add</button>
+      </div>
+      <div>
+        <select name="select" id="select" v-model="select" >
+      
+            <option v-for="option in options" :value="option.value" v-text="option.text" ></option>
+      
+      
+        </select>
+      </div>
+      <div>
+        <button @click="ordenar">Ordenar</button>
+        <button @click="misturar">Misturar</button>
+        <button @click="limpar">Limpar</button>
+      </div>
+      <div id="cardlista">
+        <ul id="lista" v-for="item in lista" :key="item.id" ><li v-text="item.num"></li></ul>
+      </div>
+  </div>
 </template>
 
 <script>
@@ -147,7 +149,11 @@ export default {
 </script>
 
 <style>
-    *{
+    div#telacont div, h1,h2, button, label,input{
         margin: 15px;
+    }
+    input{
+        background-color: white;
+        color: white;
     }
 </style>
