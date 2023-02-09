@@ -6,18 +6,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ">
-        <a class="nav-link " >Contador</a>
-        <a class="nav-link "  href="#" >Receitas</a>
-        <a class="nav-link " >Usuários</a>
+        <a class="nav-link " href="#" @click="tela = !tela, receita =false, users=false">Contador</a>
+        <a class="nav-link " href="#" @click="receita = !receita, tela =false, users=false">Receitas</a>
+        <a class="nav-link " href="#" @click="users = !users, receita =false, tela=false">Usuários</a>
         
       </div>
     </div>
   </div>
 </nav>
-<pessoas />
+<receitas v-if="receita && tela==false && users == false"/>
+<pessoas v-if="users && tela==false && receita == false"/>
+<telacont v-if="tela && receita==false && users == false"/>
 
 
-<telacont v-if="tela"/>
+
 </template>
 
 <script>
@@ -29,13 +31,13 @@ import pessoas from './components/pessoas.vue'
 export default {
     components:{telacont,receitas, pessoas},
     template : {
-       
+        
     },
     data(){
         return{
-        users : <pessoas/>,
-        tela: <telacont/>,
-        receitass:<receitas/>
+        users : false,
+        tela: true,
+        receita:false,
         }
     }
 }   
